@@ -18,8 +18,11 @@ $(document).ready(function () {
     console.log($('div.amenities h4').text());
   });
 
-  // should be changed to a url in production
-  let status = $.getJSON('http://0.0.0.0:5000/api/v1/status/', function (data) {
-    console.log(data);
+  $.getJSON('http://0.0.0.0:5001/api/v1/status/', "a string", function (data) {
+    if (data.status === 'OK') {
+      $('#api_status').addClass('available');
+    } else {
+      $('#api_status').removeClass('available');
+    }
   });
 });
