@@ -14,6 +14,7 @@ $(document).ready(function () {
       delete amenities[amenity.attributes[0].nodeValue];
     }
     $('div.amenities h4').text(Object.values(amenities).sort().toString() + '\xa0');
+    $('div.amenities h4').css({'max-height': '1.25em', 'overflow-y': 'scroll'})
     console.log(amenities);
     console.log($('div.amenities h4').text());
   });

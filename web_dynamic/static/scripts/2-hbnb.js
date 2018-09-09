@@ -16,6 +16,7 @@ $(document).ready(function () {
     $('div.amenities h4').text(Object.values(amenities).sort().toString() + '\xa0');
     console.log(amenities);
     console.log($('div.amenities h4').text());
+    $('div.amenities h4').css({'max-height': '1.25em', 'overflow-y': 'scroll'})
   });
 
   $.getJSON('http://0.0.0.0:5001/api/v1/status/', "a string", function (data) {
