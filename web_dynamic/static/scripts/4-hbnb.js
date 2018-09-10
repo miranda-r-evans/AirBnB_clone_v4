@@ -66,7 +66,7 @@ $(document).ready(function () {
   });
 
   $('section.filters > button').click(function () {
-    dataobj = {};
+    let dataobj = {};
     dataobj.amenities = amenities;
     console.log('dataobj', dataobj);
     $.ajax({
@@ -80,7 +80,7 @@ $(document).ready(function () {
       $('.places').empty();
       data.sort(function (a, b) { return a.name.localeCompare(b.name); });
       for (let place of data) {
-	$('<article>').append(
+        $('<article>').append(
           $('<div>', {'class': 'title'}).append(
             $('<h2>').text(place.name),
             $('<div>', {'class': 'price_by_night'}).html(place.price_by_night)
@@ -103,7 +103,7 @@ $(document).ready(function () {
             )
           ),
           $('<div>', {'class': 'description'}).html(place.description)
-	).appendTo($('.places'));
+        ).appendTo($('.places'));
       }
       console.log($('.places').children().last().html());
     });
