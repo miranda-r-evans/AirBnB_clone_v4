@@ -62,6 +62,5 @@ $(document).ready(function () {
         $('<div>', {'class': 'description'}).html(place.description)
       ).appendTo($('.places'));
     }
-    console.log($('.places').children().last().html());
   });
 });
